@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+  --c-band: #16af3d;
+  --c-brand-rgb: 0, 100, 0;
+  --c-dark: #303050;
+  --c-body: #636383;
+  --f-main: "Bai Jamjuree",sans-serif;
+  --transition: all .6s cubic-bezier(.165, .84, .44, 1);
+  --shadow: 0px 15px 40px rgba(0,0,0,0.1);
+}
+
+.nav-item{
+  padding-left: 2px;
+}
+body{
+  font-family: var(--f-main);
+  color: var(--c-body);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Yatay taşmayı engelle */
+}
+
+h1, .h1 ,h2, .h2 ,h3, .h3,h4, .h4 ,h5, .h5 ,h6, .h6{
+  font-weight: 700;
+  color: var(--c-dark);
+}
+a{
+  text-decoration: none;
+  color: var(--c-dark);
+  transition: var(--transition);
+}
+
+a:hover{
+  color: var(--c-band);
+}
+img{
+  width: 100%;
+}
+.langu2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.langu3{
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+.section-padding{
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.navbar{
+  padding-bottom: 30px;
+  padding-top: 30px;
+  transition: var(--transition);
+}
+.navbar.scrolled{
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: white;
+}
+
+.text-brand{
+  color: green
+}
+
+.setion-title{
+  max-width: 560px;
+  margin: 0 auto 60px auto;
+}
+
+.setion-title .line{
+  width: 60px;
+  height: 2px;
+  background-color: var(--c-band);
+  display: inline-block;
+}
+.line .line{
+  width: 60px;
+  height: 2px;
+  background-color: var(--c-band);
+  display: inline-block;
+}
+
+.section-connector{
+  position: relative;
+}
+.section-connector::after{
+  content: '';
+  width: 2px;
+  height: 100px;
+  background-color: var(--c-band);
+  position: absolute;
+  top: -50px;
+  left: 50%;
+}
+@media (min-width:992px){
+  .navbar-expand-lg .navbar-nav .nav-link{
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+.navbar .navbar-nav .nav-link{
+  font-weight: 550;
+  color: var(--c-dark);
+}
+.navbar .navbar-nav .nav-link:hover{
+  color: var(--c-band);
+}
+.navbar-brand{
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--c-dark);
+}
+.social-icon{
+  width: 36px;
+  height: 36px;
+  background-color: var(--c-band);
+  color: white;
+  border: 2px solid var(--c-band);
+  display: inline-flex;
+  align-items: center;
+  padding-left:8px;
+}
+.social-icon:hover{
+  background-color: transparent;
+}
+
+/* btn */
+
+.btn{
+  padding: 10px 24px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: green;
+  font-weight: 500;
+  border: none;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.btn-brand,.btn-brand:focus{
+  background-color: var(--c-band);
+  color: white;
+  border-color: var(--c-band);
+}
+.btn-brand:hover{
+  background-color: rgba(1, 252, 1, 0.788);
+  color: black;
+  border-color: var(--c-band);
+}
+
+/* home */
+#home{
+  background-image: url(../images/profil1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+/* services */
+.service-icon{
+  width: 60px;
+  height: 60px;
+  background-color: var(--c-band);
+  color: white;
+  font-size: 28px;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+}
+
+.custom-link{
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--f-main);
+}
+.custom-link span{
+  font-weight: 700;
+}
+.custom-link i{
+  background-color: var(--c-band);
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 100px;
+  margin-left: 6px;
+  transition: var(--transition);
+
+}
+.custom-link:hover i 
+{
+  color:black;
+  transform: translate(6px);
+}
+
+/* skills */
+
+.skillsname{
+  font-weight: bold;
+  align-items: center;
+  font-size: 20px;
+}
+
+.skillsname2{
+  display: flex;
+  font-size: 20px;
+}
+.custom-progress-bar {
+  height: 30px; /* Yüksekliği istediğiniz değere göre ayarlayın */
+display: flex;
+justify-self: center;
+background-color: white;
+margin-bottom: 15px; 
+}
+.rating-1>input,
+.rating2>input,
+.rating3>input,
+.rating4>input {
+  display: none; /* Radio butonlarını gizler */
+}
+
+.rating-1>label,
+.rating2>label,
+.rating3>label,
+.rating4>label {
+  font-size: 30px;
+  color: transparent; /* İç kısmı görünmez yapar */
+  cursor: pointer;
+  position: relative;
+}
+
+.rating-1>label::before,
+.rating2>label::before,
+.rating3>label::before,
+.rating4>label::before {
+  content: "\2605"; /* Yıldız simgesi */
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #d3d3d3; /* Varsayılan gri renk */
+  z-index: 1;
+}
+
+/* rating-1 içindeki yıldızları sarı yap */
+.rating-1>label:nth-of-type(-n+5)::before {
+  color: var(--c-band); /* Sarı renk */
+}
+
+/* rating2 içindeki yıldızları yeşil yap */
+.rating2>label:nth-of-type(-n+3)::before {
+  color: var(--c-band); /* Sarı renk */
+}
+
+/* rating3 içindeki yıldızları mavi yap */
+.rating3>label:nth-of-type(-n+3)::before {
+  color: var(--c-band); /* Sarı renk */
+}
+
+/* rating4 içindeki yıldızları kırmızı yap */
+.rating4>label:nth-of-type(-n+1)::before {
+  color: var(--c-band); /* Sarı renk */
+}
+
+/* skills2*/
+
+.project{
+  overflow: hidden;
+  position: relative;
+  
+}
+.project .content{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(14, 128, 14);
+  border-radius:20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project img, 
+.project .content{
+  transition: var(--transition);
+}
+.project:hover .content{
+  top: 0%;
+}
+.project:hover img{
+  transform: translateY(-150%);
+}
+
+.border{
+  border-radius: 20px;
+}
+
+.social{
+  margin-right: 15px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.social2{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+/* resume */
+
+.eduxp{
+  position: relative;
+  color: white;
+}
+.eduxp::before{
+  content: '';
+  height: 100%;
+  width: 1px;
+  background-color: rgba(var(--c-brand-rgb),0.1);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.eduxp::after{
+  content: '';
+  height: 14px;
+  width: 14px;
+  background-color: var(--c-band);
+  position: absolute;
+  left: -7px;
+  top: 0;
+}
+
+.ih3{
+  font-size: 18px;
+}
+.text-brand{
+  font-size: 14x;
+  font-weight: bold;
+}
+
+/*  style2 */
+
+.navbar-toggler{
+  border-radius: 0;
+}
+.navbar-toggler:focus{
+  box-shadow: 0.1px 0.1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*footer */
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+.footer a {
+  color: #079213;
+}
+.footer a:hover {
+  color: #055a1c;
+  text-decoration: none;
+}
+.footer .footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Genel karanlık mod ayarları */
+body.dark-mode {
+  background-color: #121212; /* Karanlık arka plan rengi */
+  color: #e0e0e0; /* Açık renk yazı rengi */
+}
+
+body.dark-mode #navbar {
+  background-color: #1f1f1f; /* Dark background color */
+  color: #e0e0e0; /* Light text color */
+}
+body.dark-mode h1,h4{
+  color: #ffffff; /* Light text color */
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link {
+  color: #ffffff; /* Light text color for brand and nav links */
+}
+
+body.dark-mode .social-icon i {
+  color: #e0e0e0; /* Light color for social media icons */
+}
+body.dark-mode .socialmedia2 {
+  color: #e0e0e0; /* Light color for social media icons */
+}
+
+body.dark-mode .social {
+  background-color: rgba(255, 255, 255, 0.795);
+}
+
+
+body.dark-mode .communication {
+  color: #e0e0e0; /* Light text color */
+}
+
+/* Progress Bar */
+body.dark-mode .progress-bar {
+  background-color: #6c757d; /* Dark mode progress bar color */
+}
+
+/* Dark mode buttons */
+body.dark-mode .btn-brand {
+  background-color: #b1b1b1; /* Dark button background color */
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .btn-outline-light {
+  border-color: #e0e0e0; /* Light border color */
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .btn-outline-light:hover {
+  background-color: #3a3a3a; /* Hover state background color */
+}
+
+/* Rating stars */
+body.dark-mode .rating-1 input:checked ~ label,
+body.dark-mode .rating2 input:checked ~ label,
+body.dark-mode .rating3 input:checked ~ label,
+body.dark-mode .rating4 input:checked ~ label {
+  color: #f1c40f; /* Yellow stars */
+}
+
+/* Other style settings */
+body.dark-mode .footer,
+body.dark-mode .footer-bottom {
+  color: #ffffff; /* Light text color */
+}
+body.dark-mode .scool,
+body.dark-mode .ih3,
+body.dark-mode h1{
+  color: rgb(255, 255, 255);
+}
+/* Images and other content */
+body.dark-mode img {
+  filter: brightness(60%); /* Make images more suitable for dark mode */
+}
+
+body.dark-mode .footer {
+  background-color: #1f1f1f; /* Dark background color */
+  border-color: #e0e0e0; /* Light border color */
+  color: #e0e0e0; /* Light text color */
+}
+
+#darkModeToggle {
+  position: fixed;
+  top: 50px; /* Distance from the bottom of the page */
+  right: 0px; /* Distance from the right of the page */
+  transform: translateY(50%);
+  z-index: 1000; /* Ensure the button is above other elements */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for visibility change */
+  opacity: 0; /* Initially invisible */
+}
+
+body.scrolled #darkModeToggle {
+  opacity: 1; /* Make button visible when page is scrolled */
+}
+
+body.dark-mode .skillsheader {
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode #navbar {
+  background-color: #1f1f1f !important; /* Dark background color */
+  color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .navbarNav .navbar-nav{
+  color: var(--c-band);
+}
+body.dark-mode .navbar-nav {
+  color: white;
+}
+body.dark-mode .navbar-toggler {
+  background-color: #04661b; /* Green button color */
+  border-color: #04661b; /* Green button border color */
+}
+body.dark-mode .nav-item{
+  color: white;
+}
+.eduxp2{
+  color: white;
+}
+body.dark-mode h5{
+  color: white;
+}
+body.dark-mode .text-brand{
+color: rgb(5, 73, 1);
+}
+body.dark-mode   .navbar-expand-lg .navbar-nav .nav-link{
+  color: rgb(212, 212, 212);
+}
+body.dark-mode   .navbar-expand-lg .navbar-nav .nav-link:hover{
+  color: rgb(34, 121, 0);
+}
+
+
+body.dark-mode .btn-brand{
+  background-color: rgba(9, 105, 9, 0.788);
+}
+body.dark-mode .btn-brand:hover{
+  background-color: rgba(34, 197, 34, 0.788);
+}
+/* github */
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+.profile-header img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+.profile-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.list-group-item {
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s;
+}
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
+.list-group-item a {
+  text-decoration: none;
+  color: #007bff;
+}
+.list-group-item a:hover {
+  text-decoration: underline;
+}
+
+/* github */
+
+body.dark-mode .profile-header,
+body.dark-mode .list-group{
+  background-color: #CFCFCF;
+}
+body.dark-mode .profile-header h1{
+  color: #ffffff;
+}
+body.dark-mode .github2{
+  border-radius: 7px;
+}
+
+body.dark-mode #home {
+  background-image: url(../images/profil1.jpg);
+  background-position: center;
+  background-size: cover;
+  filter: brightness(80%);
+}
+/* cv */
+
+.resume-link {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 0.25rem;
+  display: inline-block;
+}
+.resume-link:hover {
+  background-color: #0056b3;
+}
+
+/* stars*/
