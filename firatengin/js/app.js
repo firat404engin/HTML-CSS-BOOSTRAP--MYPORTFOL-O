@@ -32,9 +32,8 @@ document.getElementById('darkModeToggle').addEventListener('click', function() {
     : '<i class="ri-moon-line icon"></i>';
 });
 
-// GitHub kullanıcı adı
-const username = 'firat404engin'; // GitHub kullanıcı adınızı buraya ekleyin
-const apiUrl = `https://api.github.com/users/${username}/repos`;
+AOS.init();
+
 
 // GitHub kullanıcı adı
 const username = 'firat404engin'; // GitHub kullanıcı adınızı buraya ekleyin
