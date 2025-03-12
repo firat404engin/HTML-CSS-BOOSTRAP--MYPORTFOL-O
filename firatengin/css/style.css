@@ -222,7 +222,7 @@ img{
  align-items: center;
 }
 .custom-progress-bar {
-  height: 30px; /* Yüksekliği istediğiniz değere göre ayarlayın */
+  height: 50px; /* Yüksekliği istediğiniz değere göre ayarlayın */
 display: flex;
 justify-self: center;
 background-color: white;
