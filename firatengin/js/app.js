@@ -32,22 +32,29 @@ document.getElementById('darkModeToggle').addEventListener('click', function() {
     : '<i class="ri-moon-line icon"></i>';
 });
 
-// github 
-  const username = 'firat404engin'; // GitHub kullanıcı adınızı buraya ekleyin
-  const apiUrl = `https://api.github.com/users/${username}/repos`;
+// GitHub kullanıcı adı
+const username = 'firat404engin'; // GitHub kullanıcı adınızı buraya ekleyin
+const apiUrl = `https://api.github.com/users/${username}/repos`;
 
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(repos => {
-      const repoList = document.getElementById('repo-list');
-      repos.forEach(repo => {
-        const repoItem = document.createElement('a');
-        repoItem.className = 'list-group-item list-group-item-action';
-        repoItem.href = repo.html_url;
-        repoItem.target = '_blank';
-        repoItem.innerText = repo.name;
-        repoList.appendChild(repoItem);
-      });
-    })
+// GitHub API'den veri çekme
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(repos => {
+    // Son 5 projeyi almak için sıralama ve dilimleme
+    const latestRepos = repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, 5);
+
+    // Repo listesine ekleme
+    const repoList = document.getElementById('repo-list');
+    latestRepos.forEach(repo => {
+      const repoItem = document.createElement('a');
+      repoItem.className = 'list-group-item list-group-item-action';
+      repoItem.href = repo.html_url;
+      repoItem.target = '_blank';
+      repoItem.innerText = repo.name;
+      repoList.appendChild(repoItem);
+    });
+  })
+  .catch(error => console.error('Error fetching repos:', error));
+
 
   // stars 
