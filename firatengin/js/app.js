@@ -36,16 +36,17 @@ document.getElementById('darkModeToggle').addEventListener('click', function() {
 const username = 'firat404engin'; // GitHub kullanıcı adınızı buraya ekleyin
 const apiUrl = `https://api.github.com/users/${username}/repos`;
 
+// GitHub kullanıcı adı
+const username = 'firat404engin'; // GitHub kullanıcı adınızı buraya ekleyin
+const apiUrl = `https://api.github.com/users/${username}/starred`;
+
 // GitHub API'den veri çekme
 fetch(apiUrl)
   .then(response => response.json())
-  .then(repos => {
-    // Son 5 projeyi almak için sıralama ve dilimleme
-    const latestRepos = repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, 5);
-
-    // Repo listesine ekleme
+  .then(starredRepos => {
+    // Yıldızladığınız projeleri listeleme
     const repoList = document.getElementById('repo-list');
-    latestRepos.forEach(repo => {
+    starredRepos.forEach(repo => {
       const repoItem = document.createElement('a');
       repoItem.className = 'list-group-item list-group-item-action';
       repoItem.href = repo.html_url;
@@ -54,7 +55,7 @@ fetch(apiUrl)
       repoList.appendChild(repoItem);
     });
   })
-  .catch(error => console.error('Error fetching repos:', error));
+  .catch(error => console.error('Error fetching starred repos:', error));
 
 
   // stars 
